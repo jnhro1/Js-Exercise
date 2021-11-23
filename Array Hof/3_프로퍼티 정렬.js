@@ -4,7 +4,11 @@ let todos = [
   { id: 1, content: 'Javascript', completed: false },
 ];
 
-const sortBy = (todos, key) => todos.sort((x, y) => (x[key] > y[key] ? 1 : -1));
+// const sortBy = (todos, key) => todos.sort((x, y) => (x[key] > y[key] ? 1 : -1));
+// 부수효과 일으킨다.
+
+const sortBy = (todos, key) => [...todos].sort((x, y) => (x[key] > y[key] ? 1 : x[key] < y[key] ? -1 : 0));
+
 
 console.log(sortBy(todos, 'id'));
 // [

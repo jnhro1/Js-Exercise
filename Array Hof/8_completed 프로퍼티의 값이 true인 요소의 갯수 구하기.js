@@ -4,6 +4,8 @@ const todos = [
   { id: 1, content: 'Javascript', completed: false },
 ];
 
-const countCompletedTodos = todos => todos.reduce((cnt, todo) => (todo.completed ? ++cnt : cnt), 0);
+// const countCompletedTodos = todos => todos.reduce((cnt, todo) => (todo.completed ? ++cnt : cnt), 0);
+
+const countCompletedTodos = todos => todos.filter(todo => todo.completed).length;
 
 console.log(countCompletedTodos(todos)); // 1
